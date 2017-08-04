@@ -1,0 +1,33 @@
+<%= form_for(@breed) do |f| %>
+  <% if @breed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@breed.errors.count, "error") %> prohibited this breed from being saved:</h2>
+
+      <ul>
+      <% @breed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :porte %><br>
+    <%= f.text_field :porte %>
+  </div>
+  <div class="field">
+    <%= f.label :peso %><br>
+    <%= f.number_field :peso %>
+  </div>
+  <div class="field">
+    <%= f.label :caracteristicas %><br>
+    <%= f.text_area :caracteristicas %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
